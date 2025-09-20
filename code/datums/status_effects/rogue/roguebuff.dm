@@ -543,6 +543,17 @@
 
 // BARDIC BUFFS BELOW
 
+/datum/status_effect/buff/bardicinspiration
+	id = "bardicinspiration"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/bardicinspiration
+	duration = 30 SECONDS
+	effectedstats = list(STATKEY_LCK = 1)
+
+/atom/movable/screen/alert/status_effect/buff/bardicinspiration
+	name = "Bardic Inspiration"
+	desc = span_notice("Fate smiles upon me!")
+	icon_state = "buff"
+
 /datum/status_effect/bardicbuff
 	var/name
 	id = "bardbuff"
