@@ -1,14 +1,14 @@
-/datum/action/cooldown/spell/vicious_mockery
-	name = "Vicious Mockery"
-	desc = "Make a fool of a target and enrage them."
-	button_icon_state = "tragedy"
-	sound = 'sound/magic/mockery.ogg'
+/datum/action/cooldown/spell/bardicinspiration
+	name = "Bardic Inspiration"
+	desc = "Inspire the target with stirring words."
+	button_icon_state = "comedy"
+	sound = 'sound/magic/whiteflame.ogg'
 
 	associated_skill = /datum/skill/misc/music
 
 	charge_required = FALSE
 	spell_type = NONE
-	cooldown_time = 30 SECONDS
+	cooldown_time = 1 MINUTES
 	invocation_type = INVOCATION_SHOUT
 
 /datum/action/cooldown/spell/vicious_mockery/is_valid_target(atom/cast_on)
@@ -26,7 +26,7 @@
 		if(H.dna?.species)
 			message = pick_list_replacements("bard.json", "[H.dna.species.id]_mockery")
 	else
-		message = browser_input_text(owner, "How will I mock this fool?", "XYLIX")
+		message = browser_input_text(owner, "How will I inspire this fellow?", "XYLIX")
 		if(QDELETED(src) || QDELETED(owner) || QDELETED(cast_on) || !can_cast_spell())
 			return . | SPELL_CANCEL_CAST
 
