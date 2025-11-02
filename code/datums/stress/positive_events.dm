@@ -33,6 +33,11 @@
 	stress_change = -2
 	desc = span_green("The Gods smiles upon me.")
 
+/datum/stress_event/church_shame_inhumen
+	timer = INFINITY
+	stress_change = -5
+	desc = span_green("The Church has publicly shamed me. I wear their scorn as a badge of honour!")
+
 /datum/stress_event/lovezizo
 	timer = 99999 MINUTES
 	stress_change = -666 // :)
