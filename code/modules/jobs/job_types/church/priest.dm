@@ -186,14 +186,14 @@
 	set category = "Priest"
 	if(stat)
 		return
-	var/inputty = input("Curse someone as a heretic, calling the wrath of the Ten upon them! (curse them again to remove it)", "Sinner Name") as text|null
+	var/inputty = input("Curse someone as a heretic, calling the Ten's wrath upon them! (curse them again to remove it)", "Sinner Name") as text|null
 	if(inputty)
 		if(!istype(get_area(src), /area/rogue/indoors/town/church/chapel))
 			to_chat(src, "<span class='warning'>I need to do this from the chapel.</span>")
 			return FALSE
 		if(inputty in GLOB.heretical_players)
 			GLOB.heretical_players -= inputty
-			priority_announce("[real_name] has forgiven [inputty]. The curse is lifted!", title = "Hail the Ten!", sound = 'sound/misc/bell.ogg')
+			priority_announce("[real_name] has forgiven [inputty]. The curse is lifted, and the Ten smile on them once more!", title = "Hail the Ten!", sound = 'sound/misc/bell.ogg')
 			for(var/mob/living/carbon/H in GLOB.player_list)
 				if(H.real_name == inputty)
 					H.remove_stress(/datum/stress_event/psycurse)
@@ -208,7 +208,7 @@
 					return FALSE
 				H.add_stress(/datum/stress_event/psycurse)
 				GLOB.heretical_players += inputty
-				priority_announce("[real_name] has called the wrath of the Ten upon [inputty] for their crimes! Xylix's curse of woe is upon them!", title = "WRATH!", sound = 'sound/misc/excomm.ogg')
+				priority_announce("[real_name] has called Xylix's curse of woe upon [inputty] for their crimes! Beware the wrath of the Ten!", title = "WRATH!", sound = 'sound/misc/excomm.ogg')
 				break
 
 /mob/living/carbon/human/proc/churchshun()
