@@ -155,7 +155,7 @@
 	set category = "Priest"
 	if(stat)
 		return
-	var/inputty = input("Excommunicate someone from the Church of the Ten, cutting off their connection to the gods and damning their soul! (excommunicate them again to remove it)", "Sinner Name") as text|null
+	var/inputty = input("Excommunicate someone from the Church of the Ten, damning them and cutting off their connection to the gods! (excommunicate them again to remove it)", "Sinner Name") as text|null
 	if(inputty)
 		if(!istype(get_area(src), /area/rogue/indoors/town/church/chapel))
 			to_chat(src, span_warning("I need to do this from the chapel."))
