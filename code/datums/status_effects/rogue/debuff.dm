@@ -408,6 +408,16 @@
 	desc = "<span class='warning'>I have returned from oblivion.. but the fatigue of death still affects me.</span>\n"
 	icon_state = "muscles"
 
+/datum/status_effect/debuff/curse_of_woe
+	id = "curse_of_woe"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/curse_of_woe
+	effectedstats = list(STATKEY_LCK = -3, STATKEY_SPD = -1)
+
+/atom/movable/screen/alert/status_effect/debuff/curse_of_woe
+	name = "Curse of Woe"
+	desc = "<span class='warning'>My hands feel clumsy and I keep tripping over my own feet... the Trickster God confounds my every move!</span>\n"
+	icon_state = "luck_bad"
+
 /datum/status_effect/debuff/viciousmockery
 	id = "viciousmockery"
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/viciousmockery
