@@ -151,7 +151,7 @@
 /datum/stress_event/church_shame_ten
 	timer = INFINITY
 	stress_change = 5
-	desc = "<span class='red'>The Church has publicly shamed me. I feel so humiliated!</span>"
+	desc = span_red("The Church has publicly shamed me. I feel so humiliated!")
 
 /datum/stress_event/badmeal
 	timer = 3 MINUTES
