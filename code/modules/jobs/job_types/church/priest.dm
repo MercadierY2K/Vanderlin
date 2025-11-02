@@ -155,7 +155,7 @@
 	set category = "Priest"
 	if(stat)
 		return
-	var/inputty = input("Excommunicate someone from the Church of the Ten, cutting off their connection to the gods. (excommunicate them again to remove it)", "Sinner Name") as text|null
+	var/inputty = input("Excommunicate someone from the Church of the Ten, cutting off their connection to the gods and damning their soul! (excommunicate them again to remove it)", "Sinner Name") as text|null
 	if(inputty)
 		if(!istype(get_area(src), /area/rogue/indoors/town/church/chapel))
 			to_chat(src, span_warning("I need to do this from the chapel."))
@@ -178,7 +178,7 @@
 					return FALSE
 				H.cleric?.excommunicate()
 				GLOB.excommunicated_players += inputty
-				priority_announce("[real_name] has excommunicated [inputty]! The Ten have turned away from them!", title = "EXCOMMUNICATED", sound = 'sound/misc/excomm.ogg')
+				priority_announce("[real_name] has excommunicated [inputty]! Their soul is damned, and the Ten have turned away from them!", title = "EXCOMMUNICATED!", sound = 'sound/misc/excomm.ogg')
 				break
 
 /mob/living/carbon/human/proc/churchcurse()
@@ -193,7 +193,7 @@
 			return FALSE
 		if(inputty in GLOB.heretical_players)
 			GLOB.heretical_players -= inputty
-			priority_announce("[real_name] has forgiven [inputty]. The curse is lifted, and the Ten smile on them once more!", title = "Hail the Ten!", sound = 'sound/misc/bell.ogg')
+			priority_announce("[real_name] has forgiven [inputty]. The curse on their name is lifted!", title = "Hail the Ten!", sound = 'sound/misc/bell.ogg')
 			for(var/mob/living/carbon/H in GLOB.player_list)
 				if(H.real_name == inputty)
 					H.remove_stress(/datum/stress_event/psycurse)
@@ -229,7 +229,7 @@
 					H.remove_stress(/datum/stress_event/psycurse)
 			return
 		if(length(GLOB.tennite_schisms))
-			to_chat(src, span_warning("I cannot curse anyone during the schism!"))
+			to_chat(src, span_warning("I cannot shun anyone during the schism!"))
 			return FALSE
 		for(var/mob/living/carbon/human/H in GLOB.player_list)
 			if(H.real_name == inputty)
