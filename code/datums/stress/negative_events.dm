@@ -148,6 +148,11 @@
 	stress_change = 5
 	desc = "<span class='red'>Oh no! I've received divine punishment!</span>"
 
+/datum/stress_event/churchshameten
+	timer = INFINITY
+	stress_change = 5
+	desc = "<span class='red'>The Church has publicly shamed me. I feel so humiliated!</span>"
+
 /datum/stress_event/badmeal
 	timer = 3 MINUTES
 	stress_change = 2
