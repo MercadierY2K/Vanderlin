@@ -210,18 +210,18 @@
 				priority_announce("[real_name] has put Xylix's curse of woe on [inputty] for offending the church!", title = "SHAME", sound = 'sound/misc/excomm.ogg')
 				break
 
-/mob/living/carbon/human/proc/churchcurse()
-	set name = "Curse"
+/mob/living/carbon/human/proc/churchshun()
+	set name = "Shun"
 	set category = "Priest"
 	if(stat)
 		return
-	var/inputty = input("Curse someone as a heretic. (curse them again to remove it)", "Sinner Name") as text|null
+	var/inputty = input("Shun someone for offending the church, shaming them until they repent or make amends. (shun them again to remove it)", "Sinner Name") as text|null
 	if(inputty)
 		if(!istype(get_area(src), /area/rogue/indoors/town/church/chapel))
 			to_chat(src, "<span class='warning'>I need to do this from the chapel.</span>")
 			return FALSE
-		if(inputty in GLOB.heretical_players)
-			GLOB.heretical_players -= inputty
+		if(inputty in GLOB.shunned_players)
+			GLOB.shunned_players -= inputty
 			priority_announce("[real_name] has forgiven [inputty]. Once more walk in the light!", title = "Hail the Ten!", sound = 'sound/misc/bell.ogg')
 			for(var/mob/living/carbon/H in GLOB.player_list)
 				if(H.real_name == inputty)
@@ -236,8 +236,8 @@
 					to_chat(src, span_danger("I wasn't able to do that!"))
 					return FALSE
 				H.add_stress(/datum/stress_event/psycurse)
-				GLOB.heretical_players += inputty
-				priority_announce("[real_name] has put Xylix's curse of woe on [inputty] for offending the church!", title = "SHAME", sound = 'sound/misc/excomm.ogg')
+				GLOB.shunned_players += inputty
+				priority_announce("[real_name] has shunned [inputty] for offending the church! May they repent for their insolence!", title = "SHAME", sound = 'sound/misc/excomm.ogg')
 				break
 
 /mob/living/carbon/human/proc/churchannouncement()
