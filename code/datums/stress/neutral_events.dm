@@ -7,3 +7,8 @@
 	timer = 30 SECONDS
 	stress_change = 0
 	desc ="Foreigners..."
+
+/datum/stress_event/church_shame_psydon
+	timer = INFINITY
+	stress_change = 0
+	desc = "The Church has publicly shamed me. As if I care what those fools think!"
