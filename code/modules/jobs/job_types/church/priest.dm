@@ -216,7 +216,7 @@
 	set category = "Priest"
 	if(stat)
 		return
-	var/inputty = input("Shun someone for offending the church, shaming them until they repent or make amends. (shun them again to remove it)", "Sinner Name") as text|null
+	var/inputty = input("Shun someone for offending the church, publicly shaming them until they repent or make amends. (shun them again to remove it)", "Sinner Name") as text|null
 	if(inputty)
 		if(!istype(get_area(src), /area/rogue/indoors/town/church/chapel))
 			to_chat(src, "<span class='warning'>I need to do this from the chapel.</span>")
