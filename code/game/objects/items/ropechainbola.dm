@@ -210,7 +210,7 @@
 	return ..()
 
 /obj/structure/noose
-	name = "noose"
+	name = "Noose"
 	desc = "Abandon all hope."
 	icon = 'icons/roguetown/misc/tallstructure.dmi'
 	SET_BASE_PIXEL(0, 10)
@@ -230,8 +230,8 @@
 	buckleverb = "tie"
 
 /obj/structure/noose/gallows
-	name = "gallows"
-	desc = "Stranded and hanging, limp and dead."
+	name = "Gallows"
+	desc = "Give me six lines written by the most honest man in the world, and I will find enough in them to hang him."
 	icon_state = "gallows"
 	SET_BASE_PIXEL(0, 0)
 	max_integrity = 100
