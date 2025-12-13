@@ -145,6 +145,19 @@
 
 	skillcraft = /datum/skill/craft/masonry
 
+
+/datum/blueprint_recipe/structure/noose
+	name = "Noose"
+	desc = "Hangs from the ceiling."
+	result_type = /obj/structure/noose
+	required_materials = list(
+		/obj/item/rope = 1
+	)
+	construct_tool = /obj/item/rope
+	category = "Structures"
+	requires_ceiling = TRUE
+
+
 /datum/blueprint_recipe/structure/pottery_lathe
 	name = "Potter Lathe"
 	desc = "A lathe for creating pottery."
