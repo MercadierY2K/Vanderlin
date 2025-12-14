@@ -154,6 +154,8 @@
 		/obj/item/rope = 1
 	)
 	construct_tool = /obj/item/rope
+	verbage = "tie"
+	verbage_tp = "ties"
 	category = "Structures"
 	requires_ceiling = TRUE
 
