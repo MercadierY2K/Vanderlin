@@ -231,7 +231,7 @@
 
 /obj/structure/noose/gallows
 	name = "gallows"
-	desc = "Give me six lines written by the most honest man in the world, and I will find enough in them to hang him."
+	desc = "Read through six lines written by the most honest man in the world, and one will find enough in them to hang him."
 	icon_state = "gallows"
 	SET_BASE_PIXEL(0, 0)
 	max_integrity = 100
